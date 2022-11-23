@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      body{
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -45,7 +51,7 @@
       const ctx11 = document.getElementById("myChart11");
       const ctx12 = document.getElementById("myChart12");
 
-      const socket = io("https://grihmitraa.azurewebsites.net");
+      const socket = io("http://localhost:5000");
       socket.on("channel2", (data) => {
         // console.log(data);
         myChart.data.datasets.forEach((dataset) => {
@@ -301,7 +307,7 @@
               data: [],
               fill: false,
               borderColor: "rgb(75, 192, 192)",
-              tension: 0.1,
+              tension: 0.01,
               pointRadius: 0,
             },
           ],
@@ -317,7 +323,7 @@
               label: "Channel 2",
               data: [],
               fill: false,
-              borderColor: "rgb(175, 172 192)",
+              borderColor: "rgb(175, 0,0)",
               tension: 0.1,
               pointRadius: 0,
             },
@@ -351,7 +357,7 @@
               label: "Channel 4",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(75, 72, 192)",
               tension: 0.1,
               pointRadius: 0,
             },
@@ -369,7 +375,7 @@
               label: "Channel 5",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(105, 72, 27)",
               tension: 0.1,
               pointRadius: 0,
             },
@@ -386,7 +392,7 @@
               label: "Channel 6",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(175, 72, 92)",
               tension: 0.1,
               pointRadius: 0,
             },
@@ -403,7 +409,7 @@
               label: "Channel 7",
               data: [],
               fill: false,
-              borderColor: "#000000",
+              borderColor: "#FFF",
               tension: 0.1,
               pointRadius: 0,
             },
@@ -420,7 +426,7 @@
               label: "Channel 8",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(15, 172, 192)",
               tension: 0.1,
               pointRadius:0
             },
@@ -438,7 +444,7 @@
               label: "Channel 9",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(5, 172, 202)",
               tension: 0.1,
               pointRadius:0
             },
@@ -455,7 +461,7 @@
               label: "Channel 10",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(175, 32, 52)",
               tension: 0.1,
               pointRadius:0
             },
@@ -472,7 +478,7 @@
               label: "Channel 11",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(175, 172, 192)",
               tension: 0.1,
               pointRadius:0
             },
@@ -489,7 +495,7 @@
               label: "Channel 12",
               data: [],
               fill: false,
-              borderColor: "rgb(75, 72 192)",
+              borderColor: "rgb(50, 172,92)",
               tension: 0.1,
               pointRadius:0
             },
