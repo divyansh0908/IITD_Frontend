@@ -7,9 +7,9 @@
     <title>Document</title>
 
     <style>
-      /* body {
+      body {
         background-color: black;
-      } */
+      }
       .chart {
         height: 15vh;
         background-color: brown;
@@ -66,7 +66,7 @@ const ctx10 = document.getElementById("myChart10");
 const ctx11 = document.getElementById("myChart11");
 const ctx12 = document.getElementById("myChart12");
 
-const socket = io("https://grihmitraa.azurewebsites.net/");
+const socket = io("http://localhost:5000/");
 socket.on("channel1", (data) => {
   // console.log(data);
   const {smpleNumber, time, channel1, channel2, channel3, channel4, channel5,  channel6,  channel7,  channel8,  channel9, channel10,  channel11,  channel12 } = data;
@@ -83,6 +83,139 @@ socket.on("channel1", (data) => {
           myChart.update("quiet");
         }
 });
+myChart2.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel2.length, 501);
+          dataset.data = oldData.concat(channel2);
+          myChart2.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel2);
+          myChart2.update("quiet");
+        }
+});
+myChart3.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel3.length, 501);
+          dataset.data = oldData.concat(channel3);
+          myChart3.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel3);
+          myChart3.update("quiet");
+        }
+});
+myChart4.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel4.length, 501);
+          dataset.data = oldData.concat(channel4);
+          myChart4.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel4);
+          myChart4.update("quiet");
+        }
+});
+myChart5.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel5.length, 501);
+          dataset.data = oldData.concat(channel5);
+          myChart5.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel5);
+          myChart5.update("quiet");
+        }
+});
+myChart6.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel6.length, 501);
+          dataset.data = oldData.concat(channel6);
+          myChart6.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel6);
+          myChart6.update("quiet");
+        }
+});
+myChart7.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel7.length, 501);
+          dataset.data = oldData.concat(channel7);
+          myChart7.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel7);
+          myChart7.update("quiet");
+        }
+});
+myChart8.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel8.length, 501);
+          dataset.data = oldData.concat(channel8);
+          myChart8.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel8);
+          myChart8.update("quiet");
+        }
+});
+myChart9.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel9.length, 501);
+          dataset.data = oldData.concat(channel9);
+          myChart9.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel9);
+          myChart9.update("quiet");
+        }
+});
+myChart10.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel10.length, 501);
+          dataset.data = oldData.concat(channel10);
+          myChart10.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel10);
+          myChart10.update("quiet");
+        }
+});
+myChart11.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel11.length, 501);
+          dataset.data = oldData.concat(channel11);
+          myChart11.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel11);
+          myChart11.update("quiet");
+        }
+});
+myChart12.data.datasets.forEach((dataset) => {
+        if (dataset.data.length >= 500) {
+          // console.log("incoming data length", data.length);
+          const previousData = dataset.data;
+          const oldData = previousData.slice(channel12.length, 501);
+          dataset.data = oldData.concat(channel12);
+          myChart12.update("quiet");
+        } else {
+          dataset.data = dataset.data.concat(channel12);
+          myChart12.update("quiet");
+        }
+});
+
 });
 const labels = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -195,6 +328,236 @@ const config3 = {
   },
 };
 const myChart3 = new Chart(ctx3, config3);
+const config4 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 4",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart4 = new Chart(ctx4, config4);
+const config5 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 5",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart5 = new Chart(ctx5, config5);
+const config6 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 6",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart6 = new Chart(ctx6, config6);
+const config7 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 7",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart7 = new Chart(ctx7, config7);
+const config8 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 8",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+
+};
+const myChart8 = new Chart(ctx8, config8);
+const config9 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 9",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart9 = new Chart(ctx9, config9);
+const config10 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 10",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart10 = new Chart(ctx10, config10);
+const config11 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 11",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart11 = new Chart(ctx11, config11);
+const config12 = {
+  type: "line",
+  options: {
+    responsive: true,
+    scales: {
+      x: {
+        display: false,
+      },
+    }},
+  data: {
+    // label of length 500
+    labels: labels,
+    datasets: [
+      {
+        label: "Channel 12",
+        data: [],
+        fill: false,
+        borderColor: "rgb(75, 192, 192)",
+        tension: 0.01,
+        pointRadius: 0,
+      },
+    ],
+  },
+};
+const myChart12 = new Chart(ctx12, config12);
+
+
+
+
 
 
       
