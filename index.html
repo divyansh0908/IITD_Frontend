@@ -66,7 +66,7 @@ const ctx10 = document.getElementById("myChart10");
 const ctx11 = document.getElementById("myChart11");
 const ctx12 = document.getElementById("myChart12");
 
-const socket = io("http://localhost:5000/");
+const socket = io("https://grihmitraa.azurewebsites.net/");
 socket.on("channel1", (data) => {
   // console.log(data);
   const {smpleNumber, time, channel1, channel2, channel3, channel4, channel5,  channel6,  channel7,  channel8,  channel9, channel10,  channel11,  channel12 } = data;
