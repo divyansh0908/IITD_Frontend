@@ -66,10 +66,10 @@ const ctx10 = document.getElementById("myChart10");
 const ctx11 = document.getElementById("myChart11");
 const ctx12 = document.getElementById("myChart12");
 
-const socket = io("https://grihmitraa.azurewebsites.net/");
+const socket = io("https://grihmitraaa.azurewebsites.net/");
 socket.on("channel1", (data) => {
   // console.log(data);
-  const {smpleNumber, time, channel1, channel2, channel3, channel4, channel5,  channel6,  channel7,  channel8,  channel9, channel10,  channel11,  channel12 } = data;
+  const {channel1, channel2, channel3, channel4, channel5,  channel6,  channel7,  channel8,  channel9, channel10,  channel11,  channel12 } = data;
   // console.log(smpleNumber, time, channel1, channel2, channel3, channel4, channel5,  channel6,  channel7,  channel8,  channel9, channel10,  channel11,  channel12 );
   myChart.data.datasets.forEach((dataset) => {
         if (dataset.data.length >= 500) {
